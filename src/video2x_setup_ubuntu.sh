@@ -133,7 +133,7 @@ assets=$(echo "$srmd_ncnn_vulkan_latest_release" | jq -r '.assets | length')
 
 # iterate through each of the assets and see if the name of the asset matches what we're looking for
 for i in $(seq $assets $END); do
-    if echo "$srmd_ncnn_vulkan_latest_release" | jq -r ".assets["$(($i - 1))"].name" | egrep "^srmd-ncnn-vulkan-[0-9]*-linux\.zip$"; then
+    if echo "$srmd_ncnn_vulkan_latest_release" | jq -r ".assets["$(($i - 1))"].name" | egrep "^srmd-ncnn-vulkan-[0-9]*-ubuntu\.zip$"; then
         download_link=$(echo "$srmd_ncnn_vulkan_latest_release" | jq -r ".assets["$(($i - 1))"].browser_download_url")
         break
     fi
@@ -165,7 +165,7 @@ assets=$(echo "$realsr_ncnn_vulkan_latest_release" | jq -r '.assets | length')
 
 # iterate through each of the assets and see if the name of the asset matches what we're looking for
 for i in $(seq $assets $END); do
-    if echo "$realsr_ncnn_vulkan_latest_release" | jq -r ".assets["$(($i - 1))"].name" | egrep "^realsr-ncnn-vulkan-[0-9]*-linux\.zip$"; then
+    if echo "$realsr_ncnn_vulkan_latest_release" | jq -r ".assets["$(($i - 1))"].name" | egrep "^realsr-ncnn-vulkan-[0-9]*-ubuntu\.zip$"; then
         download_link=$(echo "$realsr_ncnn_vulkan_latest_release" | jq -r ".assets["$(($i - 1))"].browser_download_url")
         break
     fi

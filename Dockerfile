@@ -22,14 +22,14 @@ RUN sed -i 's/archive.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.lis
 RUN sed -i 's/security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
 
 # https://forums.developer.nvidia.com/t/issues-running-deepstream-on-wsl2-docker-container-usr-lib-x86-64-linux-gnu-libcuda-so-1-file-exists-n-unknown/139700/4
-RUN cd /usr/lib/x86_64-linux-gnu && rm libnvidia*.so.1
-RUN cd /usr/lib/x86_64-linux-gnu && rm libcuda.so.1
-RUN cd /usr/lib/x86_64-linux-gnu && rm libnvcuvid.so.1
+RUN cd /usr/lib/x86_64-linux-gnu && rm libnvidia*.so.1 ||:
+RUN cd /usr/lib/x86_64-linux-gnu && rm libcuda.so.1 ||:
+RUN cd /usr/lib/x86_64-linux-gnu && rm libnvcuvid.so.1 ||:
 
 # run installation
 RUN apt-get update \
     && apt-get install -y git-core \
-    && git clone --recurse-submodules --progress https://github.com/k4yt3x/video2x.git /tmp/video2x/video2x \
+    && git clone --recurse-submodules --progress https://github.com/fuleinist/video2x.git /tmp/video2x/video2x \
     && bash -e /tmp/video2x/video2x/src/video2x_setup_ubuntu.sh /
 
 WORKDIR /host
