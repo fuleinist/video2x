@@ -101,7 +101,7 @@ assets=$(echo "$waifu2x_ncnn_vulkan_latest_release" | jq -r '.assets | length')
 
 # iterate through each of the assets and see if the name of the asset matches what we're looking for
 for i in $(seq $assets $END); do
-    if echo "$waifu2x_ncnn_vulkan_latest_release" | jq -r ".assets["$(($i - 1))"].name" | egrep "^waifu2x-ncnn-vulkan-[0-9]*-linux\.zip$"; then
+    if echo "$waifu2x_ncnn_vulkan_latest_release" | jq -r ".assets["$(($i - 1))"].name" | egrep "^waifu2x-ncnn-vulkan-[0-9]*-ubuntu\.zip$"; then
         download_link=$(echo "$waifu2x_ncnn_vulkan_latest_release" | jq -r ".assets["$(($i - 1))"].browser_download_url")
         break
     fi
