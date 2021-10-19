@@ -21,6 +21,11 @@ LABEL maintainer="K4YT3X <k4yt3x@k4yt3x.com>"
 RUN sed -i 's/archive.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
 RUN sed -i 's/security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
 
+# https://forums.developer.nvidia.com/t/issues-running-deepstream-on-wsl2-docker-container-usr-lib-x86-64-linux-gnu-libcuda-so-1-file-exists-n-unknown/139700/4
+RUN cd /usr/lib/x86_64-linux-gnu && rm libnvidia*.so.1
+RUN cd /usr/lib/x86_64-linux-gnu && rm libcuda.so.1
+RUN cd /usr/lib/x86_64-linux-gnu && rm libnvcuvid.so.1
+
 # run installation
 RUN apt-get update \
     && apt-get install -y git-core \
