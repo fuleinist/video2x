@@ -178,11 +178,11 @@ if [ -z "$download_link" ]; then
     exit 1
 fi
 
-realsr_ncnn_vulkan_zip="$TEMP/realsr-ncnn-vulkan-linux.zip"
+realsr_ncnn_vulkan_zip="$TEMP/realsr-ncnn-vulkan-ubuntu.zip"
 echo "Downloading $download_link to $realsr_ncnn_vulkan_zip"
 aria2c "$download_link" --dir / -o "$realsr_ncnn_vulkan_zip"
 unzip "$realsr_ncnn_vulkan_zip" -d $TEMP/realsr-ncnn-vulkan
-mv -v $TEMP/realsr-ncnn-vulkan/realsr-ncnn-vulkan-*-linux $INSTALLATION_PATH/video2x/src/dependencies/realsr-ncnn-vulkan
+mv -v $TEMP/realsr-ncnn-vulkan/realsr-ncnn-vulkan-*-ubuntu $INSTALLATION_PATH/video2x/src/dependencies/realsr-ncnn-vulkan
 
 # install Anime4KCPP
 # install the latest cmake for compiling Anime4KCPP
