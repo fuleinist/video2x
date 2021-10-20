@@ -186,7 +186,7 @@ mv -v $TEMP/realsr-ncnn-vulkan/realsr-ncnn-vulkan-*-ubuntu $INSTALLATION_PATH/vi
 
 # install Anime4KCPP
 # install the latest cmake for compiling Anime4KCPP
-aria2c https://github.com/Kitware/CMake/releases/download/v3.18.2/cmake-3.18.2-Linux-x86_64.sh --dir / -o "$TEMP/cmake.sh"
+aria2c https://github.com/Kitware/CMake/releases/download/v3.21.3/cmake-3.21.3-Linux-x86_64.sh --dir / -o "$TEMP/cmake.sh"
 mkdir $TEMP/cmake
 bash "$TEMP/cmake.sh" --prefix=$TEMP/cmake --skip-license
 
