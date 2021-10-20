@@ -114,11 +114,11 @@ if [ -z "$download_link" ]; then
     exit 1
 fi
 
-waifu2x_ncnn_vulkan_zip="$TEMP/waifu2x-ncnn-vulkan-linux.zip"
+waifu2x_ncnn_vulkan_zip="$TEMP/waifu2x-ncnn-vulkan-ubu.zip"
 echo "Downloading $download_link to $waifu2x_ncnn_vulkan_zip"
 aria2c "$download_link" --dir / -o "$waifu2x_ncnn_vulkan_zip"
 unzip "$waifu2x_ncnn_vulkan_zip" -d $TEMP/waifu2x-ncnn-vulkan
-mv -v $TEMP/waifu2x-ncnn-vulkan/waifu2x-ncnn-vulkan-*-linux $INSTALLATION_PATH/video2x/src/dependencies/waifu2x-ncnn-vulkan
+mv -v $TEMP/waifu2x-ncnn-vulkan/waifu2x-ncnn-vulkan-*-ubuntu $INSTALLATION_PATH/video2x/src/dependencies/waifu2x-ncnn-vulkan
 
 # install srmd-ncnn-vulkan
 # download libvulkan1
@@ -146,11 +146,11 @@ if [ -z "$download_link" ]; then
     exit 1
 fi
 
-srmd_ncnn_vulkan_zip="$TEMP/srmd-ncnn-vulkan-linux.zip"
+srmd_ncnn_vulkan_zip="$TEMP/srmd-ncnn-vulkan-ubuntu.zip"
 echo "Downloading $download_link to $srmd_ncnn_vulkan_zip"
 aria2c "$download_link" --dir / -o "$srmd_ncnn_vulkan_zip"
 unzip "$srmd_ncnn_vulkan_zip" -d $TEMP/srmd-ncnn-vulkan
-mv -v $TEMP/srmd-ncnn-vulkan/srmd-ncnn-vulkan-*-linux $INSTALLATION_PATH/video2x/src/dependencies/srmd-ncnn-vulkan
+mv -v $TEMP/srmd-ncnn-vulkan/srmd-ncnn-vulkan-*-ubuntu $INSTALLATION_PATH/video2x/src/dependencies/srmd-ncnn-vulkan
 
 # install realsr-ncnn-vulkan
 # download libvulkan1
